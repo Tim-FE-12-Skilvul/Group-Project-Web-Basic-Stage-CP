@@ -6,7 +6,7 @@
 
 # Screenshot
 
-> Tampilan Deskop
+> Tampilan Desktop
 <img src="https://raw.githubusercontent.com/Tim-FE-12-Skilvul/Group-Project-Web-Basic-Stage-CP/main/Screenshot/Deskop.png">
 
 > Tampilan Mobile
