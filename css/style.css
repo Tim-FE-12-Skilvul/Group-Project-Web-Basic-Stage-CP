@@ -114,6 +114,7 @@ nav .dropdown-menu a:hover {
 #hamburger-container {
   display: none;
 }
+
 /*  style banner */
 .carousel-item {
   height: 100vh;
@@ -183,25 +184,122 @@ nav .dropdown-menu a:hover {
   max-height: 80px;
 }
 
+/* style team testimoni */
+.team .card {
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+}
+.team .card-body i {
+  font-size: 20px;
+}
+
 /* style footer */
 .footer {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #2437e5;
   color: #fff;
+  position: absolute;
 }
 
 /* style responsive */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .carousel-caption {
-    bottom: 370px;
+  /* navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
   }
-  .carousel-caption p {
+
+  #menuNav {
+    position: fixed;
+    top: 150px;
+    right: -100%;
+    background-color: #2437e5;
+    height: 100vh;
+    width: 50%;
+    padding-top: 20px;
+    transition: 0.5s;
+    z-index: 999;
+  }
+
+  #pencarianNav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: fixed;
+    top: 55px;
+    right: -100%;
+    background-color: #2437e5;
+    height: 10vh;
+    width: 50%;
+    transition: 0.5s;
+    z-index: 999;
+  }
+
+  #menuNav.active {
+    right: 0;
+  }
+
+  #pencarianNav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  nav .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  nav .dropdown-menu {
+    position: static;
     width: 100%;
+    display: none;
   }
-  .card {
-    margin-bottom: 30px;
+
+  nav .dropdown-menu li {
+    margin-bottom: 10px;
   }
-  .img-area img {
-    width: 100%;
+
+  nav .dropdown:hover .dropdown-menu.active {
+    display: block;
   }
+
+  #hamburger-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  #hamburger-container i {
+    font-size: 30px;
+    color: #fff;
+  }
+}
+
+/* caraosel */
+.carousel-caption {
+  bottom: 370px;
+}
+.carousel-caption p {
+  width: 100%;
+}
+.card {
+  margin-bottom: 30px;
+}
+.img-area img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 767px) {
