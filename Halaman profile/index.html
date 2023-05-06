@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/ceb7f3ff07.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Pembukaan Navbar -->
+    <nav>
+      <div id="logoNav">
+        <h4>Stunt<span>Free</span></h4>
+      </div>
+      <div id="menuNav">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li class="dropdown">
+            <a href="#">Kategori</a>
+            <ul class="dropdown-menu">
+              <li><a href="./aplikasi-cek/index.html">Cek Kesehatan</a></li>
+              <li><a href="#">Konsultasi</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Berita</a></li>
+          <li class="dropdown">
+            <a href="#">Peran Anda</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Keluarga</a></li>
+              <li><a href="#">Sosial</a></li>
+              <li><a href="#">Pemerintah</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Publikasi</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Regulasi</a></li>
+              <li><a href="#">Pedoman</a></li>
+              <li><a href="#">Publikasi Data</a></li>
+              <li><a href="#">Perencanaan</a></li>
+              <li><a href="#">Laporan</a></li>
+              <li><a href="#">Riset</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="pencarianNav">
+        <div class="search-container">
+          <form>
+            <input type="text" placeholder="Cari..." />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="profile-container">
+          <a href="./Login/login.html">
+            <i class="fa-solid fa-circle-user"></i>
+          </a>
+        </div>
+      </div>
+      <div id="hamburger-container">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+    <!-- Akhir navbar -->
+    <main>
+      <div class="container-profile">
+        <div class="cover">
+          <img src="img/cover.jpg" alt="Cover Image" />
+        </div>
+        <div class="photo-profile">
+          <img
+            src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png"
+            alt="Profile Image"
+          />
+        </div>
+      </div>
+      <div class="data-profile">
+        <h3 class="username"></h3>
+        <h5 class="email"></h5>
+      </div>
+      <div class="menu-container">
+        <div class="tab">
+          <button
+            class="tablinks"
+            onclick="openMenu(event, 'Profile')"
+            id="defaultOpen"
+          >
+            Profile
+          </button>
+          <button class="tablinks" onclick="openMenu(event, 'Konsultasi')">
+            Konsultasi
+          </button>
+          <button class="tablinks" onclick="openMenu(event, 'Riwayat')">
+            Riwayat
+          </button>
+        </div>
+        <div id="Profile" class="tabcontent">
+          <div class="profileContainer">
+            <h5>Username</h5>
+            <p class="username"></p>
+          </div>
+          <div class="profileContainer">
+            <h5>Email</h5>
+            <p class="email"></p>
+          </div>
+          <div class="profileContainer">
+            <h5>Password</h5>
+            <p class="password"></p>
+          </div>
+          <div class="profileContainer">
+            <h5>No HP</h5>
+            <p class="phoneNumber"></p>
+          </div>
+          <div class="profileContainer">
+            <h5>Alamat</h5>
+            <p class="address"></p>
+          </div>
+          <div class="profileContainer">
+            <h5>Tanggal Lahir</h5>
+            <p class="birthdate"></p>
+          </div>
+        </div>
+
+        <div id="Konsultasi" class="tabcontent">
+          <div class="konsultasi-container">
+            <img src="img/dokter1.png" alt="" />
+            <div class="nama-dokter"><h5>dr. Solikhun M.Gz</h5></div>
+            <div class="konsultasi-data">
+              <div class="logo-konsultasi">
+                <i class="fa-sharp fa-regular fa-calendar-days"></i>
+              </div>
+              <div class="data-konsultasi">
+                <h5>Date</h5>
+                <p>12-11-12</p>
+              </div>
+            </div>
+            <div class="konsultasi-data">
+              <div class="logo-konsultasi">
+                <i class="fa-solid fa-list"></i>
+              </div>
+              <div class="data-konsultasi">
+                <h5>Antrian ke-</h5>
+                <p>Menunggu Konfirmasi</p>
+              </div>
+            </div>
+          </div>
+          <div class="garisPerbatasan"></div>
+        </div>
+
+        <div id="Riwayat" class="tabcontent">
+          <div class="riwayatKonsultasi">
+            <div class="konsultasi-container">
+              <div class="gambar-dokter">
+                <img src="img/dokter1.png" alt="" />
+              </div>
+              <div class="nama-dokter"><h5>dr. Solikhun M.Gz</h5></div>
+              <div class="riwayat-konsultasi">
+                <div class="konsultasi-data">
+                  <div class="logo-konsultasi">
+                    <i class="fa-sharp fa-regular fa-calendar-days"></i>
+                  </div>
+                  <div class="data-konsultasi">
+                    <h5>Date</h5>
+                    <p>12-11-12</p>
+                  </div>
+                </div>
+                <div class="konsultasi-data">
+                  <div class="logo-konsultasi">
+                    <i class="fa-sharp fa-solid fa-clock"></i>
+                  </div>
+                  <div class="data-konsultasi">
+                    <h5>Consulte time</h5>
+                    <p>12.30 - 14.45 WIB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="konsultasi-data">
+                <div class="logo-konsultasi">
+                  <i class="fa-solid fa-list"></i>
+                </div>
+                <div class="data-konsultasi">
+                  <h5>Antrian ke-</h5>
+                  <p>12</p>
+                </div>
+              </div>
+              <div class="tombol-konsultasi">
+                <button>Download Informasi</button>
+              </div>
+            </div>
+            <div class="garisPerbatasan"></div>
+            <div class="konsultasi-container">
+              <img src="img/dokter2.png" alt="" />
+              <div class="nama-dokter"><h5>dr. Hamura M.Gz</h5></div>
+              <div class="riwayat-konsultasi">
+                <div class="konsultasi-data">
+                  <div class="logo-konsultasi">
+                    <i class="fa-sharp fa-regular fa-calendar-days"></i>
+                  </div>
+                  <div class="data-konsultasi">
+                    <h5>Date</h5>
+                    <p>01-07-22</p>
+                  </div>
+                </div>
+                <div class="konsultasi-data">
+                  <div class="logo-konsultasi">
+                    <i class="fa-sharp fa-solid fa-clock"></i>
+                  </div>
+                  <div class="data-konsultasi">
+                    <h5>Consulte time</h5>
+                    <p>12.30 - 14.45 WIB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="konsultasi-data">
+                <div class="logo-konsultasi">
+                  <i class="fa-solid fa-list"></i>
+                </div>
+                <div class="data-konsultasi">
+                  <h5>Antrian ke-</h5>
+                  <p>5</p>
+                </div>
+              </div>
+              <div class="tombol-konsultasi">
+                <button>Download Informasi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tombolLogout">
+        <button id="logout-btn">Logout disini bro...</button>
+      </div>
+    </main>
+    <script>
+      const hamburger = document.querySelector("#hamburger-container");
+      const menuNav = document.querySelector("#menuNav");
+      const pencarianNav = document.querySelector("#pencarianNav");
+
+      hamburger.addEventListener("click", () => {
+        menuNav.classList.toggle("active");
+        pencarianNav.classList.toggle("active");
+      });
+
+      function openMenu(evt, menuName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+
+      // Ambil data pengguna dari local storage
+      const username = localStorage.getItem("username");
+      const password = localStorage.getItem("password");
+      const email = localStorage.getItem("email");
+      const phoneNumber = localStorage.getItem("phoneNumber");
+      const address = localStorage.getItem("address");
+      const birthdate = localStorage.getItem("birthdate");
+
+      // Jika data pengguna tidak ditemukan, redirect ke halaman login
+      if (!username || !password) {
+        window.location.href = "../Login/login.html";
+      }
+
+      // Tampilkan data pengguna ke halaman HTML
+      const usernameElements = document.querySelectorAll(".username");
+      const passwordElements = document.querySelectorAll(".password");
+      const emailElements = document.querySelectorAll(".email");
+      const phoneNumberElements = document.querySelectorAll(".phoneNumber");
+      const addressElements = document.querySelectorAll(".address");
+      const birthdateElements = document.querySelectorAll(".birthdate");
+
+      // Loop melalui setiap elemen HTML dengan class "username" dan isi dengan username
+      usernameElements.forEach((element) => {
+        element.textContent = username;
+      });
+      passwordElements.forEach((element) => {
+        element.textContent = password;
+      });
+      emailElements.forEach((element) => {
+        element.textContent = email;
+      });
+      phoneNumberElements.forEach((element) => {
+        element.textContent = phoneNumber;
+      });
+      addressElements.forEach((element) => {
+        element.textContent = address;
+      });
+      birthdateElements.forEach((element) => {
+        element.textContent = birthdate;
+      });
+      if (birthdate) {
+        const date = new Date(birthdate);
+        const options = { day: "numeric", month: "long", year: "numeric" };
+        const formattedDate = date.toLocaleDateString("id-ID", options);
+        birthdateElements.forEach((element) => {
+          element.textContent = formattedDate;
+        });
+      }
+      // Ambil elemen tombol logout
+      const logoutBtn = document.getElementById("logout-btn");
+
+      // Event listener untuk tombol logout
+      logoutBtn.addEventListener("click", () => {
+        // Hapus data login dari local storage
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+
+        // Alihkan pengguna ke halaman login
+        window.location.href = "../index.html";
+      });
+
+      if (username && password) {
+        // Jika pengguna sudah login, tampilkan gambar profil
+        const profileContainer = document.querySelector('.profile-container');
+        profileContainer.innerHTML = '<img src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png" alt="Gambar Profil">';
+      }
+    </script>
+  </body>
+</html>
