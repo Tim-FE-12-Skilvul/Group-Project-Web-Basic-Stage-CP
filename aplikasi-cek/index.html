@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stunting Checker</title>
+    <script src="stunting.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+    src="https://kit.fontawesome.com/ceb7f3ff07.js"
+    crossorigin="anonymous"
+  ></script>
+  </head>
+  <body>
+    <nav>
+      <div id="logoNav">
+        <h4>Stunt<span>Free</span></h4>
+      </div>
+      <div id="menuNav">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li class="dropdown">
+            <a href="#" class="active">Kategori</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Cek Kesehatan</a></li>
+              <li><a href="#">Konsultasi</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Berita</a></li>
+          <li class="dropdown">
+            <a href="#">Peran Anda</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Keluarga</a></li>
+              <li><a href="#">Sosial</a></li>
+              <li><a href="#">Pemerintah</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Publikasi</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Regulasi</a></li>
+              <li><a href="#">Pedoman</a></li>
+              <li><a href="#">Publikasi Data</a></li>
+              <li><a href="#">Perencanaan</a></li>
+              <li><a href="#">Laporan</a></li>
+              <li><a href="#">Riset</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="pencarianNav">
+        <div class="search-container">
+          <form>
+            <input type="text" placeholder="Cari..." />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="profile-container">
+          <a href="./Login/login.html">
+            <i class="fa-solid fa-circle-user"></i>
+          </a>
+        </div>
+      </div>
+      <div id="hamburger-container">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+    <h1>Stunting Checker</h1>
+    <form class="form-stunting">
+      <label for="age">Umur (Bulan):</label>
+      <input type="number" id="age" name="age" required /><br />
+
+      <label for="sex">Jenis Kelamin:</label>
+      <select id="sex" name="sex" required>
+        <option value="">--Silahkan Pilih--</option>
+        <option value="male">Pria</option>
+        <option value="female">Wanita</option></select
+      ><br />
+
+      <label for="height">Tinggi (cm):</label>
+      <input type="number" id="height" name="height" required /><br />
+
+      <label for="weight">Berat (kg):</label>
+      <input type="number" id="weight" name="weight" required /><br />
+
+      <input type="submit" value="Check Status" />
+      <div id="output"></div>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const output = document.querySelector("#output");
+      const hamburger = document.querySelector("#hamburger-container");
+      const menuNav = document.querySelector("#menuNav");
+      const pencarianNav = document.querySelector("#pencarianNav");
+
+      hamburger.addEventListener("click", () => {
+        menuNav.classList.toggle("active");
+        pencarianNav.classList.toggle("active");
+      });
+
+      const messages = [
+        "Semangat ya, Tetap jaga pola makan dan gaya hidup sehat.",
+        "Terus pantau pertumbuhan anak, jangan sampai terlewatkan.",
+        "Pastikan anak mendapat asupan nutrisi yang cukup setiap hari.",
+        "Perhatikan juga pola tidur dan aktivitas anak.",
+        "Jangan ragu untuk berkonsultasi dengan dokter atau ahli gizi jika ada kekhawatiran.",
+        "Ayo jaga asupan sayur dan buah pada menu harian anak.",
+        "Jangan lupa untuk menambahkan protein dan karbohidrat pada makanan anak.",
+        "Ciptakan lingkungan yang mendukung gaya hidup sehat bagi anak.",
+        "Penting untuk melibatkan anak dalam proses memilih dan memasak makanan.",
+        "Ajak anak berolahraga atau bermain di luar rumah untuk menjaga kesehatannya.",
+        "Anak-anak butuh pola makan yang teratur dan terukur untuk mendukung pertumbuhannya.",
+        "Perhatikan juga faktor lingkungan seperti sanitasi dan kebersihan untuk menjaga kesehatan anak.",
+        "Penting untuk memberikan contoh pola makan dan gaya hidup sehat pada anak.",
+        "Ayo kreasikan makanan sehat yang disukai anak untuk membangkitkan selera makan.",
+        "Perbanyak asupan air putih dan hindari minuman manis berlebihan pada anak.",
+        "Selalu perhatikan pertumbuhan dan perkembangan anak dari waktu ke waktu.",
+        "Bersama-sama kita bisa mencegah stunting dan menjaga kesehatan anak.",
+        "Jangan biarkan anak terlalu lama menatap layar gadget atau televisi.",
+        "Pertumbuhan anak tergantung pada nutrisi yang ia terima, jangan sampai terabaikan.",
+        "Ayo mulai dari sekarang, jaga pola makan dan gaya hidup sehat bagi anak.",
+      ];
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const age = parseInt(document.querySelector("#age").value);
+        const sex = document.querySelector("#sex").value;
+        const height = parseInt(document.querySelector("#height").value);
+        const weight = parseInt(document.querySelector("#weight").value);
+
+        const isStunted = isChildStunted(age, sex, height, weight);
+
+        let message;
+        if (isStunted) {
+          const randomIndex = Math.floor(Math.random() * messages.length);
+          message = `Oh tidak, anak anda terindikasi stunting. ${messages[randomIndex]}`;
+          output.classList.add("output-message--stunted");
+          output.classList.remove("output-message--not-stunted");
+        } else {
+          message = `Selamat anak anda tidak terindikasi stunting.`;
+          output.classList.add("output-message--not-stunted");
+          output.classList.remove("output-message--stunted");
+        }
+
+        output.textContent = message;
+      });
+
+      // Cek apakah pengguna sudah login
+      const username = localStorage.getItem("username");
+      const password = localStorage.getItem("password");
+
+      if (username && password) {
+        // Jika pengguna sudah login, tampilkan gambar profil
+        const profileContainer = document.querySelector(".profile-container");
+        profileContainer.innerHTML =
+          '<a href="../Halaman profile/index.html"><img src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png" alt="Gambar Profil"></a>';
+      }
+    </script>
+  </body>
+</html>
