@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Halaman Utama</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			margin-top: 0;
+		}
+
+		button[type="button"] {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 250px;
+			margin-top: 50px;
+		}
+
+		button[type="button"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Selamat datang di halaman utama</h1>
+
+	<button type="button" id="logout-button">Logout</button>
+
+	<script>
+		// Ambil data pengguna dari local storage
+		const username = localStorage.getItem('username');
+		const password = localStorage.getItem('password');
+
+		// Jika data pengguna tidak ditemukan, redirect ke halaman login
+		if (!username || !password) {
+			window.location.href = 'login.html';
+		}
+
+		// Ambil elemen tombol logout
+		const logoutButton = document.getElementById('logout-button');
+
+		// Ketika tombol logout diklik, hapus data pengguna dari local storage dan redirect ke halaman login
+		logoutButton.addEventListener('click', () => {
+			localStorage.removeItem('username');
+			localStorage.removeItem('password');
+			window.location.href = 'login.html';
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="css/Login.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <img class="wave" src="img/wave.png" />
+    <div class="container">
+      <div class="img">
+        <img src="img/login.svg" />
+      </div>
+      <div class="login-content">
+        <form id="login-form">
+          <img src="img/avatar.svg" />
+          <h2 class="title">Login</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <h5>Username</h5>
+              <input type="text" id="username" name="username" class="input" />
+            </div>
+          </div>
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+              />
+            </div>
+          </div>
+          <a href="#" class="forgot-password-link">Forgot Password?</a>
+          <input type="submit" class="btn" value="Login" />
+          <p class="register-text">
+            Don't have an account?
+            <a href="register.html" class="register-link">Register here</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+    <script>
+      const inputs = document.querySelectorAll(".input");
+
+      function addcl() {
+        let parent = this.parentNode.parentNode;
+        parent.classList.add("focus");
+      }
+
+      function remcl() {
+        let parent = this.parentNode.parentNode;
+        if (this.value == "") {
+          parent.classList.remove("focus");
+        }
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", addcl);
+        input.addEventListener("blur", remcl);
+      });
+
+      // Ambil elemen form login
+      const loginForm = document.getElementById("login-form");
+
+      // Ketika form login dikirimkan, cek apakah data pengguna benar dan redirect ke halaman utama jika benar
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Ambil data pengguna dari local storage
+        const username = localStorage.getItem("username");
+        const password = localStorage.getItem("password");
+
+        // Ambil data pengguna dari form login
+        const loginUsername = loginForm.username.value;
+        const loginPassword = loginForm.password.value;
+
+        // Jika data pengguna benar, redirect ke halaman utama
+        if (username === loginUsername && password === loginPassword) {
+          window.location.href = "../index.html";
+        } else {
+          // Jika data pengguna salah, tampilkan pesan error
+          const errorElement = document.createElement("p");
+          errorElement.classList.add("error");
+          errorElement.textContent = "Incorrect username or password!.";
+		  errorElement.style.color = "red";
+		  errorElement.style.fontSize = "15px"; 
+		  errorElement.style.marginTop = "15px"; 
+		  loginForm.appendChild(errorElement);
+        }
+      });
+    </script>
+  </body>
+</html>
