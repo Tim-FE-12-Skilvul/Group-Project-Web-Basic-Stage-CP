@@ -1,134 +1,146 @@
+/* Style untuk halaman web */
 @import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
-
 body {
-    font-size: 14px;
-    font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
 }
-
 nav {
-    background-color: #8892f0;
-    color: #fff;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px 20px;
-    gap: 15%;
+  background-color: #8892f0;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15%;
 }
-
 #logoNav {
-    color: #c5c2c2;
-    font-size: 20px;
-    font-family: "Alkatra", cursive;
+  color: #c5c2c2;
+  font-size: 20px;
+  font-family: "Alkatra", cursive;
 }
-
 #logoNav span {
-    color: rgb(121, 255, 121);
+  color: rgb(121, 255, 121);
 }
-
 nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
 }
 
 nav li {
-    margin-right: 20px;
-    position: relative;
+  margin-right: 20px;
+  position: relative;
 }
 
 nav a {
-    display: block;
-    color: #fff;
-    position: relative;
-    text-decoration: none;
+  display: block;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
 }
-
 nav a.active {
-    color: #fff;
-    font-weight: bold;
-    border-bottom: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
 }
 
 nav .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: none;
 }
 
 nav .dropdown:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 nav .dropdown-menu li {
-    margin: 0;
+  margin: 0;
 }
 
 nav .dropdown-menu a {
-    padding: 10px;
-    color: #333;
-    display: block;
+  padding: 10px;
+  color: #333;
+  display: block;
 }
 
 nav .dropdown-menu a:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 #pencarianNav {
-    display: flex;
-    gap: 25px;
+  align-items: center;
+  display: flex;
+  gap: 25px;
 }
-
 .search-container {
-    display: flex;
-    position: relative;
-    width: 180px;
-    height: 30px;
-    margin: 0 10px;
+  display: flex;
+  position: relative;
+  width: 180px;
+  height: 30px;
+  margin: 0 10px;
 }
 
 .search-container input[type="text"] {
-    width: 100%;
-    height: 100%;
-    padding: 0 10px;
-    border: none;
-    border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 20px;
 }
 
 .search-container button[type="submit"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    color: #2f58cd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #2f58cd;
 }
 
 .search-container button[type="submit"] i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
+/* Style untuk elemen container profil */
 .profile-container {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Style untuk ikon profil */
+.fa-circle-user {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* Style untuk gambar profil */
+.profile-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 #hamburger-container {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 768px) {

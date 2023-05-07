@@ -51,3 +51,14 @@ window.onload = function () {
     }
   }, 25);
 };
+
+      // Cek apakah pengguna sudah login
+      const username = localStorage.getItem("username");
+      const password = localStorage.getItem("password");
+
+      if (username && password) {
+        // Jika pengguna sudah login, tampilkan gambar profil
+        const profileContainer = document.querySelector(".profile-container");
+        profileContainer.innerHTML =
+          '<a href="../Group-Project-Web-Basic-Stage-CP/Halaman profile/index.html"><img src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png" alt="Gambar Profil"></a>';
+      }
