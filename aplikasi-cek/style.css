@@ -1,0 +1,315 @@
+/* Style untuk halaman web */
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  background-color: #8892f0;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15%;
+}
+#logoNav {
+  color: #c5c2c2;
+  font-size: 20px;
+  font-family: "Alkatra", cursive;
+}
+#logoNav span {
+  color: rgb(121, 255, 121);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+}
+nav a.active {
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: none;
+}
+
+nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+nav .dropdown-menu li {
+  margin: 0;
+}
+
+nav .dropdown-menu a {
+  padding: 10px;
+  color: #333;
+  display: block;
+}
+
+nav .dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+#pencarianNav {
+  align-items: center;
+  display: flex;
+  gap: 25px;
+}
+.search-container {
+  display: flex;
+  position: relative;
+  width: 180px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.search-container input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.search-container button[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #2f58cd;
+}
+
+.search-container button[type="submit"] i {
+  font-size: 1.2rem;
+}
+
+/* Style untuk elemen container profil */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Style untuk ikon profil */
+.fa-circle-user {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* Style untuk gambar profil */
+.profile-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#hamburger-container {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.form-stunting{
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.output-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 56px;
+  text-align: center;
+}
+
+/* Style untuk pesan output ketika terkena stunting */
+.output-message--stunted {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  background-color: #ff4136;
+}
+
+/* Style untuk pesan output ketika tidak terkena stunting */
+.output-message--not-stunted {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  background-color: #2ecc40;
+}
+
+    @media screen and (max-width: 768px) {
+      nav {
+        display: flex;
+        justify-content: space-between;
+      }
+    
+      #menuNav {
+        position: fixed;
+        top: 150px;
+        right: -100%;
+        background-color: #8892f0;
+        height: 100vh;
+        width: 50%;
+        padding-top: 20px;
+        transition: 0.5s;
+        z-index: 999;
+      }
+    
+      #pencarianNav {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        position: fixed;
+        top: 55px;
+        right: -100%;
+        background-color: #8892f0;
+        height: 10vh;
+        width: 50%;
+        transition: 0.5s;
+        z-index: 999;
+        padding-top: 20px;
+      }
+      .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      #menuNav.active {
+        right: 0;
+      }
+    
+      #pencarianNav.active {
+        right: 0;
+      }
+    
+      nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+      }
+    
+      nav li {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    
+      nav .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+    
+      nav .dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+      }
+    
+      nav .dropdown-menu li {
+        margin-bottom: 10px;
+      }
+    
+      nav .dropdown:hover .dropdown-menu.active {
+        display: block;
+      }
+    
+      #hamburger-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    
+      #hamburger-container i {
+        font-size: 30px;
+        color: #fff;
+      }
+    }
