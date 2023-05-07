@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/ceb7f3ff07.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Berita</title>
+</head>
+
+<body>
+    <nav>
+        <div id="logoNav">
+            <h4>Stunt<span>Free</span></h4>
+        </div>
+        <div id="menuNav">
+            <ul>
+                <li><a href="/index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Kategori</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cek Kesehatan</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="berita.html" class="active">Berita</a></li>
+                <li class="dropdown">
+                    <a href="#">Peran Anda</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Keluarga</a></li>
+                        <li><a href="#">Sosial</a></li>
+                        <li><a href="#">Pemerintah</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Publikasi</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Regulasi</a></li>
+                        <li><a href="#">Pedoman</a></li>
+                        <li><a href="#">Publikasi Data</a></li>
+                        <li><a href="#">Perencanaan</a></li>
+                        <li><a href="#">Laporan</a></li>
+                        <li><a href="#">Riset</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="pencarianNav">
+            <div class="search-container">
+                <form>
+                    <input type="text" placeholder="Cari..." />
+                    <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+                </form>
+            </div>
+            <div class="profile-container">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+        <div id="hamburger-container">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <main>
+        <div class="container text-center">
+            <div class="row justify-content-center" id="listArticles">
+            </div>
+        </div>
+    </main>
+    <script src="script.js "></script>
+    <script src="berita.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+</body>
+
+</html>
