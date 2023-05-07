@@ -15,5 +15,5 @@ hamburger.addEventListener('click', () => {
         // Jika pengguna sudah login, tampilkan gambar profil
         const profileContainer = document.querySelector(".profile-container");
         profileContainer.innerHTML =
-          '<a href="../Halaman profile/index.html"><img src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png" alt="Gambar Profil"></a>';
+          '<a href="./../Halaman profile/index.html"><img src="https://raw.githubusercontent.com/Dedytobing/personalWebsite/main/img/logo.png" alt="Gambar Profil"></a>';
       }
