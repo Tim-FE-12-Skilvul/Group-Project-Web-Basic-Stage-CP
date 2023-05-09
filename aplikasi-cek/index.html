@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Stunting Checker</title>
     <script src="stunting.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script
-    src="https://kit.fontawesome.com/ceb7f3ff07.js"
-    crossorigin="anonymous"
-  ></script>
-  </head>
-  <body>
+    <script src="https://kit.fontawesome.com/ceb7f3ff07.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
     <nav>
-      <div id="logoNav">
-        <h4>Stunt<span>Free</span></h4>
-      </div>
-      <div id="menuNav">
-        <ul>
-          <li><a href="./../index.html">Beranda</a></li>
-          <li class="dropdown">
-            <a href="#" class="active">Kategori</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Cek Kesehatan</a></li>
-              <li><a href="#">Konsultasi</a></li>
+        <div id="logoNav">
+            <h4>Stunt<span>Free</span></h4>
+        </div>
+        <div id="menuNav">
+            <ul>
+                <li><a href="./../index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">Kategori</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cek Kesehatan</a></li>
+                        <li><a href="#">Konsultasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="./../articles/berita.html">Berita</a></li>
             </ul>
-          </li>
-          <li><a href="./../articles/berita.html">Berita</a></li>
-        </ul>
-      </div>
-      <div id="pencarianNav">
-        <div class="search-container">
-          <form>
-            <input type="text" placeholder="Cari..." />
-            <button type="submit">
+        </div>
+        <div id="pencarianNav">
+            <div class="search-container">
+                <form>
+                    <input type="text" placeholder="Cari..." />
+                    <button type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-          </form>
+                </form>
+            </div>
+            <div class="profile-container">
+                <a href="./../Login/login.html">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            </div>
         </div>
-        <div class="profile-container">
-          <a href="./../Login/login.html">
-            <i class="fa-solid fa-circle-user"></i>
-          </a>
+        <div id="hamburger-container">
+            <i class="fa-solid fa-bars"></i>
         </div>
-      </div>
-      <div id="hamburger-container">
-        <i class="fa-solid fa-bars"></i>
-      </div>
     </nav>
     <h1>Stunting Checker</h1>
     <form class="form-stunting">
-      <label for="age">Umur (Bulan):</label>
-      <input type="number" id="age" name="age" required /><br />
+        <label for="age">Umur (Bulan):</label>
+        <input type="number" id="age" name="age" required /><br />
 
-      <label for="sex">Jenis Kelamin:</label>
-      <select id="sex" name="sex" required>
+        <label for="sex">Jenis Kelamin:</label>
+        <select id="sex" name="sex" required>
         <option value="">--Silahkan Pilih--</option>
         <option value="male">Pria</option>
         <option value="female">Wanita</option></select
@@ -68,7 +67,7 @@
       <div id="output"></div>
     </form>
     <script>
-      const form = document.querySelector("form");
+      const form = document.querySelector(".form-stunting");
       const output = document.querySelector("#output");
       const hamburger = document.querySelector("#hamburger-container");
       const menuNav = document.querySelector("#menuNav");
